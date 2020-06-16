@@ -1,4 +1,4 @@
-<?php require_once("../controller/controllerListCarro.php");?>
+<?php require_once("../controllers/controllerListCarro.php");?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <?php include("head.php"); ?>    
