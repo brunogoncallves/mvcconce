@@ -1,50 +1,39 @@
 <?php
-
-class Carro{
+require_once('carroDb.php');
+class Carro extends CarroDb{
     private $chassi; 
     private $marca;
     private $modelo;
-    private $cor;
-    private $omotor;
+    private $cor;     
 
-    public function __construct(){
-        echo("Carro criado!");
-    }
-
-    public function getChassi (){
+    public function getChassi(){
         return $this->chassi;
     }
-    public function getMarca (){
+    public function getMarca(){
         return $this->marca;
-        }
-    public function getModelo (){
+    }
+    public function getModelo(){
         return $this->modelo;
     }
-    public function getoMotor (){
-        return $this->omotor;
-    }
-    public function getCor (){
+    public function getCor(){
         return $this->cor;
     }
-
-    public function setChassi (){
-        $this->$chassi = $chassi;
+    
+    public function setChassi($chassi){
+        $this->chassi = $chassi;
     }
-    public function setMarca (){
-        $this->$marca = $marca;
+    public function setMarca($marca){
+        $this->marca = $marca;
     }
-    public function setModelo (){
-        $this->$modelo = $modelo;
+    public function setModelo($modelo){
+        $this->modelo = $modelo;
     }
-    public function setcor (){
-        $this->$cor = $cor;
-    }
-    public function setoMotor (){
-        $this->$motor = $omotor;
-    }
-    public function incluir (){
-        echo("Carro incluso");
+    public function setCor($cor){
+        $this->cor = $cor;
     }
     
+    public function incluir(){
+        return $this->setCarro($this->getMarca(), $this->getModelo(), $this->getCor());
+    }
 
 }

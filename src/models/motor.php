@@ -1,19 +1,15 @@
 <?php
-
-class motor{
+require_once('motorDb.php');
+class Motor extends MotorDb{
     private $potencia;
     private $cilindro;
     private $chassi;
-
-    public function __construct(){
-        echo("motor criado");
-    }
-
+   
     public function getPotencia(){
         return $this->potencia;
     }
     public function getCilindro(){
-        return $this->cilindros;
+        return $this->cilindro;
     }
     public function getChassi(){
         return $this->chassi;
@@ -29,6 +25,6 @@ class motor{
     }
 
     public function incluir(){
-        echo("Motor Incluso");
+        return $this->setMotor($this->getPotencia(), $this->getCilindro(), $this->getChassi());
     }
 }
